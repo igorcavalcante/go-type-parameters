@@ -21,8 +21,6 @@ func main() {
 		return x > 2
 	}
 
-	fmt.Printf("%v\n", gFindOne[Some[int], int](xs, gT2))
-
 	fmt.Printf("%v\n", gFind(xs, gT2))
 }
 
@@ -51,25 +49,4 @@ func gFind[T comparable](xs []T, f func(T) bool) []T {
 		}
 	}
 	return ys
-}
-
-func gFindOne[U Some[T], T comparable](xs []T, f func(T) bool) U {
-	for _, v := range xs {
-		if f(v) {
-			s := Some[T]{val: v}
-			return s
-		}
-	}
-
-	return Some[T]{val: xs[0]}
-}
-
-type Optional[T comparable] interface {
-	Some[T] | None[T]
-}
-
-type None[T any] struct{}
-
-type Some[T comparable] struct {
-	val T
 }
