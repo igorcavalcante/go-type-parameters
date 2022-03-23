@@ -39,7 +39,7 @@ var _ = Describe("Tree", func() {
 			})
 		})
 
-		When("the tree has tree elements", func() {
+		When("the tree has three elements", func() {
 			BeforeEach(func() {
 				intTree.Left = &types.Tree[int]{Value: 2}
 				intTree.Right = &types.Tree[int]{Value: 1}
